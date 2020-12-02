@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "456408075129",
+    "firebase_url": "https://alcancia-b6185.firebaseio.com",
+    "project_id": "alcancia-b6185",
+    "storage_bucket": "alcancia-b6185.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456408075129:android:30aa6621aa435f9637fda8",
+        "android_client_info": {
+          "package_name": "com.a42student.alcancia"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456408075129-cr7toa7cilgpv1f2dn5n0mithj9j0crf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArKNQmUm0ALTOSW29e7IPq5yASq-LTkpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456408075129-cr7toa7cilgpv1f2dn5n0mithj9j0crf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
