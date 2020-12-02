@@ -131,6 +131,9 @@ class _SignInPageState extends State<SignInPage> {
         ],
       ),
       onPressed: () async {
+        setState(() {
+          loading = true;
+        });
         if (register) {
           result = await context.read<AuthenticationService>().signUp(
                 email: widget.emailController.text.trim(),
@@ -144,9 +147,8 @@ class _SignInPageState extends State<SignInPage> {
         }
         if (result != null) {
           _infoSnackBar(context: context, message: result);
-        } else {
           setState(() {
-            loading = true;
+            loading = false;
           });
         }
       },
