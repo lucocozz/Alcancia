@@ -4,8 +4,6 @@ import 'package:alcancia/pages/account/widgets/account_page.dart';
 import 'package:alcancia/pages/home/widgets/profil_image.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-
 class AccountPreview extends StatelessWidget {
   final Account account;
 
@@ -67,7 +65,6 @@ class AccountPreview extends StatelessWidget {
           Text(
             boxName,
             style: TextStyle(
-              fontFamily: gFontFamily,
               fontWeight: FontWeight.bold,
               fontSize: 14,
               color: gPrimaryColor,
@@ -77,7 +74,6 @@ class AccountPreview extends StatelessWidget {
             text: TextSpan(
               text: "$value",
               style: TextStyle(
-                fontFamily: gFontFamily,
                 fontWeight: FontWeight.bold,
                 fontSize: 26,
                 color: Colors.black,
@@ -86,7 +82,6 @@ class AccountPreview extends StatelessWidget {
                 TextSpan(
                   text: " €",
                   style: TextStyle(
-                    fontFamily: gFontFamily,
                     fontSize: 17,
                   ),
                 ),
@@ -111,7 +106,6 @@ class AccountPreview extends StatelessWidget {
               style: TextStyle(
                 fontSize: 21,
                 fontWeight: FontWeight.bold,
-                fontFamily: gFontFamily,
               ),
             ),
             Text(
@@ -119,13 +113,19 @@ class AccountPreview extends StatelessWidget {
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.bold,
-                fontFamily: gFontFamily,
                 color: Colors.blueGrey[200],
               ),
             ),
           ],
         ),
-        ProfilImage(account: account, size: 50, radius: 20),
+        ProfilImage(
+          account: account,
+          size: 50,
+          radius: 20,
+          iconSize: 28,
+          iconColor: Colors.blueGrey[200],
+          backgroundColor: gWhiteAccent,
+        ),
       ],
     );
   }

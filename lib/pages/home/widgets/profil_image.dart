@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
 
 import 'package:alcancia/models/account_model.dart';
-import 'package:alcancia/themes/themes.dart';
 
 class ProfilImage extends StatelessWidget {
   final Account account;
   final double size;
   final double radius;
+  final Color backgroundColor;
+  final Color iconColor;
+  final double iconSize;
 
-  ProfilImage({this.account, this.size, this.radius});
+  ProfilImage({
+    this.account,
+    this.size,
+    this.radius,
+    this.backgroundColor,
+    this.iconSize,
+    this.iconColor,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +28,12 @@ class ProfilImage extends StatelessWidget {
           ? Image.asset(account.photo, fit: BoxFit.cover)
           : Icon(
               Icons.person,
-              color: Colors.blueGrey[200],
-              size: 28,
+              color: iconColor,
+              size: iconSize,
             )),
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
-        color: gWhiteAccent,
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(radius),
       ),
     );

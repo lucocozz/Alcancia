@@ -31,7 +31,12 @@ class AuthenticationService {
     return null;
   }
 
-  Future<String> signUp({String email, String password}) async {
+  Future<String> signUp({
+    String email,
+    String password,
+    String firstName,
+    String lastName,
+  }) async {
     try {
       await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
@@ -44,6 +49,7 @@ class AuthenticationService {
         return (e.code.replaceAll(RegExp(r'-'), ' '));
       }
     } catch (e) {
+      print(e.code);
       return (e.code.replaceAll(RegExp(r'-'), ' '));
     }
     return null;

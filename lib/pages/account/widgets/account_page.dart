@@ -1,4 +1,3 @@
-import 'package:alcancia/constants.dart';
 import 'package:alcancia/models/account_model.dart';
 import 'package:alcancia/themes/themes.dart';
 import 'package:alcancia/pages/home/widgets/profil_image.dart';
@@ -62,37 +61,61 @@ class AccountPage extends StatelessWidget {
             color: Colors.white,
             borderRadius: BorderRadius.vertical(top: Radius.circular(60)),
             child: Padding(
-              padding: EdgeInsets.only(left: 30, right: 30, top: 10),
-              child: Column(
-                children: [
-                  Container(
-                    height: 7,
-                    width: 35,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[200],
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.symmetric(vertical: 20),
-                    child: Text(
-                      "Transactions",
-                      style: TextStyle(fontFamily: gFontFamily, fontSize: 25),
-                    ),
-                  ),
-                  Expanded(
-                    child: ListView.builder(
-                      controller: scrollController,
-                      physics: BouncingScrollPhysics(),
-                      itemCount: 15,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: _transactionsTile(account: account),
-                        );
-                      },
+              padding: EdgeInsets.only(left: 30, right: 30),
+              child: CustomScrollView(
+                controller: scrollController,
+                slivers: [
+                  SliverAppBar(
+                    expandedHeight: 75,
+                    automaticallyImplyLeading: false,
+                    // backgroundColor: Colors.transparent,
+                    flexibleSpace: FlexibleSpaceBar(
+                      titlePadding: EdgeInsets.only(top: 10),
+                      centerTitle: true,
+                      title: Column(
+                        children: [
+                          Container(
+                            // margin: EdgeInsets.only(top: 50),
+                            height: 7,
+                            width: 35,
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            // child: Text(
+                            //   "test",
+                            //   style: TextStyle(color: Colors.black),
+                            // ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.symmetric(vertical: 20),
+                            child: Text(
+                              "Transactions",
+                              style: TextStyle(
+                                fontSize: 25,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
+                //     Expanded(
+                //       child: ListView.builder(
+                //         controller: scrollController,
+                //         physics: BouncingScrollPhysics(),
+                //         itemCount: 0,
+                //         itemBuilder: (context, index) {
+                //           return ListTile(
+                //             title: _transactionsTile(account: account),
+                //           );
+                //         },
+                //       ),
+                //     ),
+                //   ],
+                // ),
               ),
             ),
           );
@@ -103,7 +126,14 @@ class AccountPage extends StatelessWidget {
 
   Widget _transactionsTile({Account account}) {
     return ListTile(
-      leading: ProfilImage(account: account, size: 50, radius: 20),
+      leading: ProfilImage(
+        account: account,
+        size: 50,
+        radius: 20,
+        backgroundColor: gWhiteAccent,
+        iconColor: Colors.blueGrey[200],
+        iconSize: 28,
+      ),
       title: Text(account.firstname),
       subtitle: Text(account.lastname),
       trailing: Container(
@@ -141,12 +171,18 @@ class AccountPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          ProfilImage(size: 100, account: account, radius: 40),
+          ProfilImage(
+            size: 100,
+            account: account,
+            radius: 40,
+            backgroundColor: gSecondaryColor.withOpacity(0.1),
+            iconColor: gPrimaryColor.withOpacity(0.1),
+            iconSize: 50,
+          ),
           Text(
             "${account.firstname} ${account.lastname}",
             style: TextStyle(
               fontSize: 35,
-              fontFamily: gFontFamily,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -177,7 +213,6 @@ class AccountPage extends StatelessWidget {
           Text(
             boxName,
             style: TextStyle(
-              fontFamily: gFontFamily,
               fontWeight: FontWeight.bold,
               fontSize: 14,
               color: Color(0XFFAAABBF),
@@ -188,7 +223,6 @@ class AccountPage extends StatelessWidget {
             text: TextSpan(
               text: "$value",
               style: TextStyle(
-                fontFamily: gFontFamily,
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
                 color: Colors.black,
@@ -197,7 +231,6 @@ class AccountPage extends StatelessWidget {
                 TextSpan(
                   text: " €",
                   style: TextStyle(
-                    fontFamily: gFontFamily,
                     fontSize: 19,
                   ),
                 ),

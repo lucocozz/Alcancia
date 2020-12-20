@@ -1,4 +1,3 @@
-import 'package:alcancia/constants.dart';
 import 'package:alcancia/models/account_model.dart';
 import 'package:alcancia/pages/home/widgets/profil_image.dart';
 import 'package:alcancia/services/authentication_service.dart';
@@ -6,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'package:alcancia/themes/themes.dart';
-import '../../../data/account_list.dart' as data;
-import '../../../data/menu_list.dart' as list;
+import '../../data/account_list.dart' as data;
+import '../../data/menu_list.dart' as list;
 
 class DrawerView extends StatelessWidget {
   final Account account = data.accountList[0];
@@ -47,7 +46,6 @@ class DrawerView extends StatelessWidget {
                   fontSize: 20,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontFamily: gFontFamily,
                 ),
               ),
               SizedBox(width: 20),
@@ -89,7 +87,6 @@ class DrawerView extends StatelessWidget {
         title,
         style: TextStyle(
           color: Colors.white,
-          fontFamily: gFontFamily,
           fontSize: 23,
         ),
       ),
@@ -106,7 +103,6 @@ class DrawerView extends StatelessWidget {
           style: TextStyle(
             height: 1.2,
             color: Colors.white,
-            fontFamily: gFontFamily,
             fontSize: 35,
             fontWeight: FontWeight.bold,
             letterSpacing: 1.5,

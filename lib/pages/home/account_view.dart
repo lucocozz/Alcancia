@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'account_preview.dart';
-import '../../../data/account_list.dart' as data;
+import 'widgets/account_preview.dart';
+import '../../data/account_list.dart' as data;
 
 class AccountView extends StatelessWidget {
   @override

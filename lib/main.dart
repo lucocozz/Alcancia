@@ -1,5 +1,5 @@
 import 'package:alcancia/constants.dart';
-import 'package:alcancia/pages/auth/sign_in_page.dart';
+import 'package:alcancia/pages/auth/auth_page.dart';
 import 'package:alcancia/services/authentication_service.dart';
 import 'package:alcancia/pages/account/widgets/account_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -34,7 +34,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Alcancia',
-        theme: Themes.defaultTheme,
+        theme: ThemeData(
+          accentColor: gAccentColor,
+          primaryColor: gPrimaryColor,
+          backgroundColor: gBackgroundColor,
+          textTheme: Theme.of(context).textTheme.apply(fontFamily: gFontFamily),
+          iconTheme: IconThemeData(color: Colors.white),
+        ),
         home: AnimatedSplashScreen(
           duration: 1000,
           splash: SplashScreen(),
@@ -56,7 +62,7 @@ class AuthenticationWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     final firebaseUser = context.watch<User>();
     if (firebaseUser != null) return HomePage();
-    return SignInPage();
+    return AuthPage();
   }
 }
 

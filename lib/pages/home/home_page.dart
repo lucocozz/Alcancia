@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:alcancia/themes/themes.dart';
-import 'package:alcancia/pages/home/widgets/account_view.dart';
+import 'package:alcancia/pages/home/account_view.dart';
 import 'package:alcancia/pages/home/widgets/drawer_button.dart';
-import 'package:alcancia/pages/home/widgets/drawer_view.dart';
+import 'package:alcancia/pages/home/drawer_view.dart';
 
 class HomePage extends StatefulWidget {
   static const String routeName = "/home_page";
